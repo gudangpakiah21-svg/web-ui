@@ -7,7 +7,7 @@
       "type": "vless",
       "tag": "vless-in",
       "listen": "::",
-      "listen_port": 8081,
+      "listen_port": 8080,
       "users": [
         {
           "uuid": "d3b07384-d113-424a-a513-33e9d0b61e2f",
