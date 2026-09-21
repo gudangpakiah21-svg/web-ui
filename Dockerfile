@@ -1,15 +1,19 @@
-FROM ghcr.io/sagernet/sing-box:latest
+FROM alpine:latest
 
-# Install nginx untuk Web UI
-RUN apk add --no-cache nginx
+# Install Nginx & sing-box
+RUN apk add --no-cache nginx sing-box
 
-COPY config.json /etc/sing-box/config.json
+# Setup Folder
+RUN mkdir -p /var/www/html /etc/sing-box /run/nginx
+
+# Copy Berkas Konfigurasi
+COPY nginx.conf /etc/nginx/nginx.conf
 COPY index.html /var/www/html/index.html
-COPY nginx.conf /etc/nginx/http.d/default.conf
+COPY config.json /etc/sing-box/config.json
 COPY entrypoint.sh /entrypoint.sh
 
 RUN chmod +x /entrypoint.sh
 
-EXPOSE 8081
+EXPOSE 80
 
 ENTRYPOINT ["/entrypoint.sh"]
