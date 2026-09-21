@@ -8,14 +8,48 @@
     {
       "type": "vless",
       "tag": "vless-in",
-      "listen": "::",
-      "listen_port": 8080,
+      "listen": "127.0.0.1",
+      "listen_port": 8081,
       "users": [
         {
-          "uuid": "00000000-0000-0000-0000-000000000000",
-          "flow": ""
+          "uuid": "d3b07384-d113-424a-a513-33e9d0b61e2f"
         }
-      ]
+      ],
+      "transport": {
+        "type": "ws",
+        "path": "/vless"
+      }
+    },
+    {
+      "type": "vmess",
+      "tag": "vmess-in",
+      "listen": "127.0.0.1",
+      "listen_port": 8082,
+      "users": [
+        {
+          "uuid": "d3b07384-d113-424a-a513-33e9d0b61e2f",
+          "alterId": 0
+        }
+      ],
+      "transport": {
+        "type": "ws",
+        "path": "/vmess"
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "trojan-in",
+      "listen": "127.0.0.1",
+      "listen_port": 8083,
+      "users": [
+        {
+          "password": "d3b07384-d113-424a-a513-33e9d0b61e2f"
+        }
+      ],
+      "transport": {
+        "type": "ws",
+        "path": "/trojan"
+      }
     }
   ],
   "outbounds": [
