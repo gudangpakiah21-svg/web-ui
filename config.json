@@ -1,6 +1,8 @@
 {
   "log": {
-    "level": "warn"
+    "disabled": false,
+    "level": "info",
+    "timestamp": true
   },
   "inbounds": [
     {
@@ -10,14 +12,10 @@
       "listen_port": 8080,
       "users": [
         {
-          "uuid": "d3b07384-d113-424a-a513-33e9d0b61e2f",
+          "uuid": "00000000-0000-0000-0000-000000000000",
           "flow": ""
         }
-      ],
-      "transport": {
-        "type": "ws",
-        "path": "/vless"
-      }
+      ]
     }
   ],
   "outbounds": [
