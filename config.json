@@ -1,16 +1,31 @@
 {
+  "log": {
+    "loglevel": "warning"
+  },
   "inbounds": [
     {
-      "type": "mixed",
-      "tag": "mixed-in",
-      "listen": "::",
-      "listen_port": 8080
+      "port": 8081,
+      "protocol": "vless",
+      "settings": {
+        "clients": [
+          {
+            "id": "d3b07384-d113-424a-a513-33e9d0b61e2f",
+            "level": 0
+          }
+        ],
+        "decryption": "none"
+      },
+      "streamSettings": {
+        "network": "ws",
+        "wsSettings": {
+          "path": "/vless"
+        }
+      }
     }
   ],
   "outbounds": [
     {
-      "type": "direct",
-      "tag": "direct"
+      "protocol": "freedom"
     }
   ]
 }
